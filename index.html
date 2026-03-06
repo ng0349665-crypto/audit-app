@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>稽查APP</title>
+<link rel="manifest" href="manifest.json">
+<style>
+body{font-family:Arial;padding:20px}
+input,select,button{font-size:16px;margin:5px 0;padding:8px;width:100%}
+canvas{border:1px solid #333;margin-top:10px}
+</style>
+</head>
+
+<body>
+
+<h2>現場稽查</h2>
+
+<label>案件編號</label>
+<input id="caseId">
+
+<label>稽查人員</label>
+<input id="auditor">
+
+<label>稽查結果</label>
+<select id="result">
+<option>符合</option>
+<option>不符合</option>
+</select>
+
+<button onclick="getGPS()">取得GPS</button>
+<p id="gps"></p>
+
+<label>現場照片</label>
+<input type="file" id="photo" accept="image/*" capture="environment">
+
+<h3>簽名</h3>
+<canvas id="sign" width="300" height="150"></canvas>
+<button onclick="clearSign()">清除簽名</button>
+
+<br><br>
+<button onclick="send()">送出</button>
+
+<script src="app.js"></script>
+
+</body>
+</html>
